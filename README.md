@@ -3,7 +3,7 @@
 **Curated by Don Trabajo / Felix Gutierrez**  
 Founder of [Prox Offensive](https://proxoffensive.com)
 
-📥 [Download the PDF](https://recon.proxoffensive.com/Prox_Offensive_Recon_Toolkit_v0.1_LAYOUT_FIXED.pdf)
+📥 [Download the PDF](https://recon.proxoffensive.com/Prox_Offensive_Recon_Toolkit_v0.1.pdf)
 
 ---
 
