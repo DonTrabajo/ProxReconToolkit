@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prox Offensive Recon Toolkit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #00ff88;
+      font-family: 'Fira Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .logo {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+    .terminal {
+      max-width: 800px;
+      text-align: left;
+      white-space: pre-wrap;
+      font-size: 1rem;
+    }
+    .typing::after {
+      content: '|';
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    .button {
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #00ff88;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <img src="ProxFlatVector.png" alt="Prox Offensive Logo" class="logo" />
+
+  <div class="terminal">
+    <div id="typed" class="typing"></div>
+  </div>
+
+  <a href="Prox_Offensive_Recon_Toolkit_v0.1.pdf" class="button" download>
+    📥 Download the Toolkit
+  </a>
+
+  <footer>
+    Created by Don Trabajo · felix.gutierrez@proxoffensive.com · github.com/DonTrabajo
+  </footer>
+
+  <script>
+    const text = `Red Team Recon Toolkit v0.1\n
+Curated by Don Trabajo of Prox Offensive\n\n
+A field-ready recon stack for lab warriors, red team rookies, and lifelong learners.\n\n
+Tools: Nmap, CrackMapExec, WinPEAS, Nessus, OSINT, ChatGPT.\n\n
+"Wu-Tang is for the children. Prox Offensive is for the future."`;
+
+    let index = 0;
+    const speed = 30;
+    function type() {
+      if (index < text.length) {
+        document.getElementById("typed").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, speed);
+      }
+    }
+    window.onload = type;
+  </script>
+</body>
+</html>
