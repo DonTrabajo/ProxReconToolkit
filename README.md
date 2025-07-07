@@ -1,55 +1,62 @@
-# 🛠️ Prox Offensive Recon Flow Toolkit v0.1
+# 🛰️ Prox Recon Toolkit v0.2  
+![version](https://img.shields.io/badge/version-0.2-blue.svg)
 
-**Curated by Don Trabajo / Felix Gutierrez**  
-Founder of [Prox Offensive](https://proxoffensive.com)
-
-📥 [Download the PDF](https://recon.proxoffensive.com/Prox_Offensive_Recon_Toolkit_v0.1.pdf)
+**Upgrade your recon. Move like a ghost. Hit like a storm.**
 
 ---
 
-## 🔍 About the Toolkit
+## 🧭 Recon Philosophy
 
-This field-ready recon stack is built for:
+> “Through active immersion in the present and the communication of lessons learned,  
+> we can shape the terrain ahead.”  
+> — *Don Trabajo*
 
-- Lab warriors working through Hack The Box, TryHackMe, and certification labs
-- Red team rookies who want structure and signal
-- Self-learners building their flow through real tools and intuition
+This toolkit is for lab warriors, cyber ronin, and red team rookies sharpening one of InfoSec’s most crucial disciplines: **Reconnaissance**.
 
-### 🔧 Included Tools
-
-| Tool          | Purpose                             |
-|---------------|-------------------------------------|
-| `nmap`        | Network & port scanning             |
-| `CrackMapExec`| SMB recon + password spraying       |
-| `WinPEAS`     | Windows privilege escalation        |
-| `Nessus`      | Vulnerability scanning              |
-| `OSINT tools` | Domain and identity recon           |
-| `ChatGPT`     | Recon synthesis & strategic guidance|
+We focus on stealth, signal, and synthesis. From OSINT to internal enumeration, every step here is meant to **map the target, not alert it.**
 
 ---
 
-## 🧠 Author Philosophy
+## 🔄 Recon Phases
 
-> “Wu-Tang is for the children. Prox Offensive is for the future.”
-
-This project reflects a deeper mission: bridging red teaming, artistry, and open knowledge. We rise by sharing.
-
----
-
-## 🛜 Live Version
-
-📡 [Visit the interactive toolkit landing page](https://recon.proxoffensive.com)
+1. **Pre-Engagement OSINT**
+2. **Network Mapping & Port Scanning**
+3. **Service Enumeration**
+4. **Credential Harvesting**
+5. **Vulnerability Discovery**
+6. **Contextual Analysis + Synthesis**
 
 ---
 
-## 📫 Contact
+## 🛠️ Toolkit Index
 
-- **Email:** felix.gutierrez@proxoffensive.com  
-- **GitHub:** [DonTrabajo](https://github.com/DonTrabajo)  
-- **Website:** [proxoffensive.com](https://proxoffensive.com)
+| Tool             | Purpose                             | Example                                              |
+|------------------|-------------------------------------|------------------------------------------------------|
+| `nmap`           | Network & port scanning             | `nmap -sC -sV -oA scan 10.10.x.x`                    |
+| `crackmapexec`   | SMB recon + password spray          | `cme smb 10.10.x.x -u users.txt -p passwords.txt`    |
+| `winPEAS`        | Windows privesc enumeration         | `winPEASx64.exe > out.txt`                           |
+| `nessus`         | Vulnerability scanning              | Web GUI (default policies)                           |
+| `theHarvester`   | OSINT emails/subdomains             | `theharvester -d target.com -b all`                  |
+| `crt.sh`         | Certificate transparency OSINT      | Search `%.target.com`                                |
+| `shodan`         | Internet-facing device search       | `org:"Acme Inc"`                                     |
+| `whois`          | Domain registry info                | `whois target.com`                                   |
+| `chatgpt`        | Recon synthesis + query building    | "Generate stealthy Nmap scans for subnet X"          |
+| `rustscan`       | Fast port scanning                  | `rustscan -a 10.10.x.x`                              |
+| `amass`          | Subdomain enumeration               | `amass enum -d target.com`                           |
+| `dnsx`           | DNS probing                         | `dnsx -l subs.txt -r resolvers.txt`                  |
+| `SpiderFoot`     | Deep OSINT automation               | Web UI or CLI mode                                   |
+| `recon-ng`       | Modular recon framework             | `recon-ng > marketplace install all`                 |
+| `DonTrabajoGPT`  | AI-powered recon insights           | [Repo](https://github.com/DonTrabajo/DonTrabajoGPT)  |
 
 ---
 
-## 🪪 License
+## 🧑‍💻 Contact
 
-Open and remixable. Attribution appreciated. Share with your crew.
+- **👤 Don Trabajo**
+- **📧** felix.gutierrez@proxoffensive.com  
+- **🌐** [proxoffensive.com](https://proxoffensive.com)  
+- **💻** [github.com/DonTrabajo](https://github.com/DonTrabajo)
+
+---
+
+> 🛰️ *Prox Offensive: We don’t just look for doors. We find the blueprints.*
