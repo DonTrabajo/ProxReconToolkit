@@ -1,0 +1,10 @@
+# Recon Toolkit artifacts
+*.log
+*.nmap
+*.pcap
+*.zip
+*.exe
+output/
+__pycache__/
+.env
+.DS_Store
