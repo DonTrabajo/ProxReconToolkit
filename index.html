@@ -1,116 +1,205 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prox Offensive Recon Toolkit</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prox Offensive Recon Toolkit</title>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+<style>
     body {
       margin: 0;
       background-color: #000;
       color: #00ff88;
       font-family: 'Fira Mono', monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       padding: 2rem;
+      overflow-x: hidden;
+      position: relative;
+      z-index: 0;
     }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease-out;
+    }
+
     .logo {
-      width: 100px;
-      margin-bottom: 1rem;
+      width: 40vw;
+      max-width: 300px;
+      height: auto;
+      margin: 2rem auto 1rem auto;
+      display: block;
+      animation: fadeInLogo 1s ease-in-out;
+      z-index: 1;
+      position: relative;
     }
+
+    @keyframes fadeInLogo {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .terminal {
       max-width: 800px;
       text-align: left;
       white-space: pre-wrap;
       font-size: 1rem;
+      margin: 0 auto;
+      z-index: 1;
+      position: relative;
     }
+
+    .terminal strong {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    .highlight {
+      color: #00bfff;
+    }
+
     .typing::after {
       content: '|';
       animation: blink 1s step-start infinite;
     }
+
     @keyframes blink {
       50% { opacity: 0; }
     }
+
     .button {
-      margin-top: 2rem;
+      display: block;
+      margin: 2rem auto 0 auto;
       padding: 0.75rem 1.5rem;
       background-color: #00ff88;
       color: #000;
       text-decoration: none;
       font-weight: bold;
       border-radius: 4px;
+      width: fit-content;
+      z-index: 1;
+      position: relative;
     }
+
     footer {
       margin-top: 3rem;
       font-size: 0.8rem;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    .services-link {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.75rem 1.25rem;
+      background-color: #00ffaa;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      font-family: monospace;
+      width: fit-content;
+      z-index: 1;
+      position: relative;
     }
   </style>
 </head>
 <body>
-  <img src="ProxFlatVector.png" alt="Prox Offensive Logo" class="logo">
-
-  <p style="margin-top: 2rem;">
-    <a href="/services/" style="display: inline-block; padding: 0.75rem 1.25rem; background-color: #00ffaa; color: #000; text-decoration: none; font-weight: bold; border-radius: 6px; font-family: monospace;">
-      🛠️ View Recon Services
-    </a>
-  </p>
-
-  <div class="terminal">
-    <div id="typed" class="typing"></div>
-  </div>
-
-  <a href="Prox_Offensive_Recon_Toolkit_v0.1.pdf" class="button" download>
-    📥 Download the Toolkit
+<canvas id="matrix"></canvas>
+<img alt="Prox Offensive Logo" class="logo" src="ProxFlatVector.png"/>
+<a class="services-link" href="/services/">🛠️ View Recon Services</a>
+<div class="terminal">
+<div class="typing" id="typed"></div>
+</div>
+<a href="/toolkit/" class="button">
+  🛰️ View the Toolkit
   </a>
-
-  <footer>
+<div class="mt-16 border-t border-green-700 pt-8"><h2 class="text-xl text-green-300 mb-6 text-center">// Why Trust This Toolkit?</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center text-green-400"><div><div class="text-3xl">🧠</div><div class="font-bold mt-2">AI‑Enhanced Recon</div><p class="text-sm text-green-500">GPT‑powered vulnerability insights</p></div><div><div class="text-3xl">🧰</div><div class="font-bold mt-2">Red Team Tools</div><p class="text-sm text-green-500">Nmap, WinPEAS, CrackMapExec</p></div><div><div class="text-3xl">🎓</div><div class="font-bold mt-2">Field-Tested Knowledge</div><p class="text-sm text-green-500">TryHackMe, HTB, Pentest+ certified</p></div><div><div class="text-3xl">👁️</div><div class="font-bold mt-2">OSINT Practitioner</div><p class="text-sm text-green-500">Real-world footprinting and analysis</p></div></div></div><footer>
     Created by Don Trabajo · felix.gutierrez@proxoffensive.com · github.com/DonTrabajo
   </footer>
-
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <script>
-    const text = `Red Team Recon Toolkit v0.1\n
-Curated by Don Trabajo of Prox Offensive\n\n
-A field-ready recon stack for lab warriors, red team rookies, and lifelong learners.\n\n
-Tools: Nmap, CrackMapExec, WinPEAS, Nessus, OSINT, ChatGPT.\n\n
-"Wu-Tang is for the children. Prox Offensive is for the future."`;
+<script>
+    const text = `<strong>Red Team Recon Toolkit v0.1</strong><br>
+Curated by <span class="highlight">Don Trabajo</span> of <span class="highlight">Prox Offensive</span><br><br>
+A field-ready recon stack for <strong>lab warriors</strong>, <strong>red team rookies</strong>, and <strong>lifelong learners</strong>.<br><br>
+Tools: <span class="highlight">Nmap</span>, <span class="highlight">CrackMapExec</span>, <span class="highlight">WinPEAS</span>, <span class="highlight">Nessus</span>, <span class="highlight">OSINT</span>, <span class="highlight">ChatGPT</span>.<br><br>
+"We do this for the next generation of makers, breakers, and builders."`;
 
     let index = 0;
-    const speed = 30;
+    const speed = 25;
+    const span = document.getElementById("typed");
 
     function type() {
-      if (index < text.length) {
-        document.getElementById("typed").textContent += text.charAt(index++);
-        setTimeout(type, speed);
+      if (index >= text.length) return;
+      const char = text[index++];
+      if (char === "<") {
+        const tagEnd = text.indexOf(">", index);
+        const tag = text.slice(index - 1, tagEnd + 1);
+        span.innerHTML += tag;
+        index = tagEnd + 1;
+      } else {
+        span.innerHTML += char;
       }
+      setTimeout(type, speed);
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      type();
+    function initMatrixRain() {
+      const canvas = document.getElementById("matrix");
+      const ctx = canvas.getContext("2d");
 
-      const initCalendly = () => {
-        if (window.Calendly?.initBadgeWidget) {
-          Calendly.initBadgeWidget({
-            url: 'https://calendly.com/felix-gutierrez-proxoffensive?background_color=00ff99&text_color=0d0d0d',
-            text: 'Book a Free Consultation for Services',
-            color: '#00ff99',
-            textColor: '#0d0d0d',
-            branding: true
-          });
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      const letters = "010101010101010101";
+      const fontSize = 14;
+      const columns = Math.floor(canvas.width / fontSize);
+      const drops = Array(columns).fill(1);
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#00bfff";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          const char = letters[Math.floor(Math.random() * letters.length)];
+          ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+          if (drops[i] * fontSize > canvas.height || Math.random() > 0.98) drops[i] = 0;
+          drops[i]++;
         }
-      };
+      }
 
-      setTimeout(initCalendly, 100);
-    });
+      setInterval(draw, 50);
+
+      window.addEventListener("scroll", () => {
+        canvas.style.opacity = window.scrollY > 100 ? "0.1" : "1";
+      });
+    }
+
+    window.onload = function () {
+      type();
+      initMatrixRain();
+      Calendly.initBadgeWidget({
+        url: 'https://calendly.com/felix-gutierrez-proxoffensive',
+        text: 'Book a Free Consultation for Services',
+        color: '#00ff88',
+        textColor: '#000000',
+        branding: true
+      });
+    };
   </script>
+<script async="" src="https://assets.calendly.com/assets/external/widget.js"></script>
 </body>
 </html>
-<!-- Calendly badge widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/felix-gutierrez-proxoffensive', text: 'Book a Free Consultation for Services', color: '#00ff88', textColor: '#000000', branding: true }); }</script>
-<!-- Calendly badge widget end -->
