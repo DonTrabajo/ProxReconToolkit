@@ -53,10 +53,11 @@ We focus on stealth, signal, and synthesis. From OSINT to internal enumeration, 
 ## 🧑‍💻 Contact
 
 - **👤 Don Trabajo**
-- **📧** felix.gutierrez@proxoffensive.com  
+- **📧** redacted@example.com  
 - **🌐** [proxoffensive.com](https://proxoffensive.com)  
 - **💻** [github.com/DonTrabajo](https://github.com/DonTrabajo)
 
 ---
 
 > 🛰️ *Prox Offensive: We don’t just look for doors. We find the blueprints.*
+

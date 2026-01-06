@@ -44,7 +44,7 @@ This recon flow was powered by:
 
 If you’d like a recon audit tailored to your organization, reach out via:
 
-📧 felix.gutierrez@proxoffensive.com  
+📧 redacted@example.com  
 🌐 https://proxoffensive.com  
 🐙 https://github.com/DonTrabajo
 
@@ -53,3 +53,4 @@ If you’d like a recon audit tailored to your organization, reach out via:
 Prox Offensive is where red teaming, AI tooling, and artistic spirit meet.
 
 🫱🏻‍🫲🏽 Stay safe, stay sharp, stay soulful.
+
