@@ -1,15 +1,12 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Prox Offensive Recon Toolkit</title>
-<link href="favicon.png" rel="icon" type="image/png"/>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Mono&amp;display=swap" rel="stylesheet"/>
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Prox Offensive Recon Toolkit</title>
+  <link href="assets/favicon.png" rel="icon" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet" />
+  <style>
     body {
       margin: 0;
       background-color: #000;
@@ -113,20 +110,45 @@
   </style>
 </head>
 <body>
-<canvas id="matrix"></canvas>
-<img alt="Prox Offensive Logo" class="logo" src="ProxFlatVector.png"/>
-<a class="services-link" href="/services/">🛠️ View Recon Services</a>
-<div class="terminal">
-<div class="typing" id="typed"></div>
-</div>
-<a href="/toolkit/" class="button">
-  🛰️ View the Toolkit
+  <canvas id="matrix"></canvas>
+  <img alt="Prox Offensive Logo" class="logo" src="ProxFlatVector.png" />
+  <a class="services-link" href="sample-audit/sample_recon_audit.html">View Sample Recon Audit</a>
+  <div class="terminal">
+    <div class="typing" id="typed"></div>
+  </div>
+  <a href="toolkit.html" class="button">
+    View the Toolkit
   </a>
-<div class="mt-16 border-t border-green-700 pt-8"><h2 class="text-xl text-green-300 mb-6 text-center">// Why Trust This Toolkit?</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center text-green-400"><div><div class="text-3xl">🧠</div><div class="font-bold mt-2">AI‑Enhanced Recon</div><p class="text-sm text-green-500">GPT‑powered vulnerability insights</p></div><div><div class="text-3xl">🧰</div><div class="font-bold mt-2">Red Team Tools</div><p class="text-sm text-green-500">Nmap, WinPEAS, CrackMapExec</p></div><div><div class="text-3xl">🎓</div><div class="font-bold mt-2">Field-Tested Knowledge</div><p class="text-sm text-green-500">TryHackMe, HTB, Pentest+ certified</p></div><div><div class="text-3xl">👁️</div><div class="font-bold mt-2">OSINT Practitioner</div><p class="text-sm text-green-500">Real-world footprinting and analysis</p></div></div></div><footer>
-    Created by Don Trabajo · redacted@example.com · github.com/DonTrabajo
+  <div class="mt-16 border-t border-green-700 pt-8">
+    <h2 class="text-xl text-green-300 mb-6 text-center">// Why Trust This Toolkit?</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center text-green-400">
+      <div>
+        <div class="text-3xl">AI</div>
+        <div class="font-bold mt-2">AI-Enhanced Recon</div>
+        <p class="text-sm text-green-500">LLM-assisted synthesis and reporting</p>
+      </div>
+      <div>
+        <div class="text-3xl">RT</div>
+        <div class="font-bold mt-2">Red Team Tools</div>
+        <p class="text-sm text-green-500">Nmap, WinPEAS, and OSINT stacks</p>
+      </div>
+      <div>
+        <div class="text-3xl">LAB</div>
+        <div class="font-bold mt-2">Lab-Validated</div>
+        <p class="text-sm text-green-500">Signals and methods tested safely</p>
+      </div>
+      <div>
+        <div class="text-3xl">OSINT</div>
+        <div class="font-bold mt-2">OSINT Practitioner</div>
+        <p class="text-sm text-green-500">Footprinting and analysis workflows</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    Created by Don Trabajo | contact@proxoffensive.com | github.com/DonTrabajo
   </footer>
-<script>
-    const text = `<strong>Red Team Recon Toolkit v0.1</strong><br>
+  <script>
+    const text = `<strong>Prox Recon Toolkit v0.2</strong><br>
 Curated by <span class="highlight">Don Trabajo</span> of <span class="highlight">Prox Offensive</span><br><br>
 A field-ready recon stack for <strong>lab warriors</strong>, <strong>red team rookies</strong>, and <strong>lifelong learners</strong>.<br><br>
 Tools: <span class="highlight">Nmap</span>, <span class="highlight">CrackMapExec</span>, <span class="highlight">WinPEAS</span>, <span class="highlight">Nessus</span>, <span class="highlight">OSINT</span>, <span class="highlight">ChatGPT</span>.<br><br>
@@ -191,16 +213,7 @@ Tools: <span class="highlight">Nmap</span>, <span class="highlight">CrackMapExec
     window.onload = function () {
       type();
       initMatrixRain();
-      Calendly.initBadgeWidget({
-        url: 'https://calendly.com/felix-gutierrez-proxoffensive',
-        text: 'Book a Free Consultation for Services',
-        color: '#00ff88',
-        textColor: '#000000',
-        branding: true
-      });
     };
   </script>
-<script async="" src="https://assets.calendly.com/assets/external/widget.js"></script>
 </body>
 </html>
-

@@ -1,63 +1,50 @@
-# 🛰️ Prox Recon Toolkit v0.2  
+# Prox Recon Toolkit
 ![version](https://img.shields.io/badge/version-0.2-blue.svg)
 
-**Upgrade your recon. Move like a ghost. Hit like a storm.**
+Prox Recon Toolkit is a public-safe recon blueprint for client-facing reporting. It is a static site that pairs a landing page with a sample audit to demonstrate how recon findings can be presented clearly and consistently.
 
----
+This repo focuses on methodology, storytelling, and report structure. It intentionally omits step-by-step offensive commands and internal identifiers.
 
-## 🧭 Recon Philosophy
+## Quickstart (local)
+Option 1: open `index.html` directly in your browser.
 
-> “Through active immersion in the present and the communication of lessons learned,  
-> we can shape the terrain ahead.”  
-> — *Don Trabajo*
+Option 2: run a simple local server:
 
-This toolkit is for lab warriors, cyber ronin, and red team rookies sharpening one of InfoSec’s most crucial disciplines: **Reconnaissance**.
+```bash
+python -m http.server 8000
+```
 
-We focus on stealth, signal, and synthesis. From OSINT to internal enumeration, every step here is meant to **map the target, not alert it.**
+Then visit `http://localhost:8000/`.
 
----
+Optional (Node):
 
-## 🔄 Recon Phases
+```bash
+npx serve .
+```
 
-1. **Pre-Engagement OSINT**
-2. **Network Mapping & Port Scanning**
-3. **Service Enumeration**
-4. **Credential Harvesting**
-5. **Vulnerability Discovery**
-6. **Contextual Analysis + Synthesis**
+## Deploy (static hosting)
+This is a static site. Upload the repository contents to your static host of choice (GitHub Pages, S3, Netlify, etc.).
 
----
+Minimal set to deploy:
+- `index.html`
+- `toolkit.html`
+- `sample-audit/`
+- `assets/`
+- `ProxFlatVector.png`
 
-## 🛠️ Toolkit Index
+## Structure
+- `index.html`: Landing page.
+- `toolkit.html`: Toolkit overview page.
+- `sample-audit/`: Sample recon audit (HTML + PDF).
+- `assets/`: Favicon and screenshots.
 
-| Tool             | Purpose                             | Example                                              |
-|------------------|-------------------------------------|------------------------------------------------------|
-| `nmap`           | Network & port scanning             | `nmap -sC -sV -oA scan 10.10.x.x`                    |
-| `crackmapexec`   | SMB recon + password spray          | `cme smb 10.10.x.x -u users.txt -p passwords.txt`    |
-| `winPEAS`        | Windows privesc enumeration         | `winPEASx64.exe > out.txt`                           |
-| `nessus`         | Vulnerability scanning              | Web GUI (default policies)                           |
-| `theHarvester`   | OSINT emails/subdomains             | `theharvester -d target.com -b all`                  |
-| `crt.sh`         | Certificate transparency OSINT      | Search `%.target.com`                                |
-| `shodan`         | Internet-facing device search       | `org:"Acme Inc"`                                     |
-| `whois`          | Domain registry info                | `whois target.com`                                   |
-| `chatgpt`        | Recon synthesis + query building    | "Generate stealthy Nmap scans for subnet X"          |
-| `rustscan`       | Fast port scanning                  | `rustscan -a 10.10.x.x`                              |
-| `amass`          | Subdomain enumeration               | `amass enum -d target.com`                           |
-| `dnsx`           | DNS probing                         | `dnsx -l subs.txt -r resolvers.txt`                  |
-| `SpiderFoot`     | Deep OSINT automation               | Web UI or CLI mode                                   |
-| `recon-ng`       | Modular recon framework             | `recon-ng > marketplace install all`                 |
-| `DonTrabajoGPT`  | AI-powered recon insights           | [Repo](https://github.com/DonTrabajo/DonTrabajoGPT)  |
+## Screenshots
+![Homepage](assets/screenshots/homepage.png)
+![Sample audit](assets/screenshots/sample-audit.png)
 
----
+## OPSEC gate
+Run the local scan before publishing changes:
 
-## 🧑‍💻 Contact
-
-- **👤 Don Trabajo**
-- **📧** redacted@example.com  
-- **🌐** [proxoffensive.com](https://proxoffensive.com)  
-- **💻** [github.com/DonTrabajo](https://github.com/DonTrabajo)
-
----
-
-> 🛰️ *Prox Offensive: We don’t just look for doors. We find the blueprints.*
-
+```bash
+python scripts/opsec_scan.py --root .
+```

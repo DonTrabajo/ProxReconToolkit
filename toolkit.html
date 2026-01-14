@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Prox Recon Toolkit v.2</title>
+  <title>Prox Recon Toolkit v0.2</title>
   <style>
     body {
       background-color: #000000;
@@ -39,75 +38,27 @@
   </style>
 </head>
 <body>
-  <div class="typing-container"><h1>Welcome to Prox Recon Toolkit v.2</h1></div>
-  <div class="typing-container">A stealth-first recon strategy guide by Don Trabajo | Prox Offensive</div>
+  <div class="typing-container"><h1>Welcome to Prox Recon Toolkit v0.2</h1></div>
+  <div class="typing-container">A stealth-first recon blueprint by Don Trabajo | Prox Offensive</div>
   <div class="github-star">
     <iframe src="https://ghbtns.com/github-btn.html?user=DonTrabajo&repo=ProxReconToolkit&type=star&count=true"
             frameborder="0" scrolling="0" width="100" height="20" title="GitHub"></iframe>
   </div>
-  <pre># 🛰️ Prox Recon Toolkit v0.2  
-![version](https://img.shields.io/badge/version-0.2-blue.svg)
+  <pre>
+Prox Recon Toolkit v0.2
 
-**Upgrade your recon. Move like a ghost. Hit like a storm.**
+Purpose
+- A public-safe recon blueprint that focuses on methodology and reporting.
+- Designed for lab use and defensive validation.
 
----
+What you get
+- A static landing page (index.html) for the toolkit overview.
+- A sample recon audit (sample-audit/sample_recon_audit.html).
+- A reference toolkit page (this file) for local browsing.
 
-## 🧭 Recon Philosophy
-
-> “Through active immersion in the present and the communication of lessons learned,  
-> we can shape the terrain ahead.”  
-> — *Don Trabajo*
-
-This toolkit is for lab warriors, cyber ronin, and red team rookies sharpening one of InfoSec’s most crucial disciplines: **Reconnaissance**.
-
-We focus on stealth, signal, and synthesis. From OSINT to internal enumeration, every step here is meant to **map the target, not alert it.**
-
----
-
-## 🔄 Recon Phases
-
-1. **Pre-Engagement OSINT**
-2. **Network Mapping & Port Scanning**
-3. **Service Enumeration**
-4. **Credential Harvesting**
-5. **Vulnerability Discovery**
-6. **Contextual Analysis + Synthesis**
-
----
-
-## 🛠️ Toolkit Index
-
-| Tool             | Purpose                             | Example                                              |
-|------------------|-------------------------------------|------------------------------------------------------|
-| `nmap`           | Network & port scanning             | `nmap -sC -sV -oA scan 10.10.x.x`                    |
-| `crackmapexec`   | SMB recon + password spray          | `cme smb 10.10.x.x -u users.txt -p passwords.txt`    |
-| `winPEAS`        | Windows privesc enumeration         | `winPEASx64.exe > out.txt`                           |
-| `nessus`         | Vulnerability scanning              | Web GUI (default policies)                           |
-| `theHarvester`   | OSINT emails/subdomains             | `theharvester -d target.com -b all`                  |
-| `crt.sh`         | Certificate transparency OSINT      | Search `%.target.com`                                |
-| `shodan`         | Internet-facing device search       | `org:"Acme Inc"`                                     |
-| `whois`          | Domain registry info                | `whois target.com`                                   |
-| `chatgpt`        | Recon synthesis + query building    | "Generate stealthy Nmap scans for subnet X"          |
-| `rustscan`       | Fast port scanning                  | `rustscan -a 10.10.x.x`                              |
-| `amass`          | Subdomain enumeration               | `amass enum -d target.com`                           |
-| `dnsx`           | DNS probing                         | `dnsx -l subs.txt -r resolvers.txt`                  |
-| `SpiderFoot`     | Deep OSINT automation               | Web UI or CLI mode                                   |
-| `recon-ng`       | Modular recon framework             | `recon-ng > marketplace install all`                 |
-| `DonTrabajoGPT`  | AI-powered recon insights           | [Repo](https://github.com/DonTrabajo/DonTrabajoGPT)  |
-
----
-
-## 🧑‍💻 Contact
-
-- **👤 Don Trabajo**
-- **📧** redacted@example.com  
-- **🌐** [proxoffensive.com](https://proxoffensive.com)  
-- **💻** [github.com/DonTrabajo](https://github.com/DonTrabajo)
-
----
-
-> 🛰️ *Prox Offensive: We don’t just look for doors. We find the blueprints.*
-</pre>
+Notes
+- No internal hostnames, private IPs, or credentials are included.
+- This repo omits step-by-step offensive commands by design.
+  </pre>
 </body>
 </html>
-
