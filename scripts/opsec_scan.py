@@ -85,12 +85,12 @@ def iter_files(root: str):
 
 def scan_file(path: str, root: str):
     rel = os.path.relpath(path, root)
-    basename = os.path.basename(rel).lower()
+    rel_norm = rel.replace("\\", "/").lower()
     try:
         with open(path, "r", encoding="utf-8", errors="ignore") as handle:
             for idx, line in enumerate(handle, 1):
                 for rule_name, pattern in RULES:
-                    if rule_name == "operator_name" and basename in NAME_ALLOWLIST_FILES:
+                    if rule_name == "operator_name" and rel_norm in NAME_ALLOWLIST_FILES:
                         continue
                     if pattern.search(line):
                         yield rel, idx, rule_name
