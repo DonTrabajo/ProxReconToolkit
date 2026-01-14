@@ -41,6 +41,7 @@ Minimal set to deploy:
 ## Screenshots
 ![Homepage](assets/screenshots/homepage.png)
 ![Sample audit](assets/screenshots/sample-audit.png)
+![Toolkit](assets/screenshots/toolkit.png)
 
 ## OPSEC gate
 Run the local scan before publishing changes:
