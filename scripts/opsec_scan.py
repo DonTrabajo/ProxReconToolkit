@@ -65,6 +65,7 @@ IP_REGEX = re.compile(
     r"\b(?:25[0-5]|2[0-4]\d|1?\d?\d)(?:\.(?:25[0-5]|2[0-4]\d|1?\d?\d)){3}\b"
 )
 ALLOWED_IP_PREFIXES = ("192.0.2.", "198.51.100.", "203.0.113.")
+NAME_ALLOWLIST_FILES = {"license", "license.md"}
 
 
 def is_allowed_ip(ip: str) -> bool:
@@ -84,10 +85,13 @@ def iter_files(root: str):
 
 def scan_file(path: str, root: str):
     rel = os.path.relpath(path, root)
+    basename = os.path.basename(rel).lower()
     try:
         with open(path, "r", encoding="utf-8", errors="ignore") as handle:
             for idx, line in enumerate(handle, 1):
                 for rule_name, pattern in RULES:
+                    if rule_name == "operator_name" and basename in NAME_ALLOWLIST_FILES:
+                        continue
                     if pattern.search(line):
                         yield rel, idx, rule_name
                 for ip in IP_REGEX.findall(line):
