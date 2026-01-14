@@ -39,8 +39,8 @@ Minimal set to deploy:
 - `assets/`: Favicon and screenshots.
 
 ## Screenshots
-![Homepage](assets/screenshots/homepage.png)
-![Sample audit](assets/screenshots/sample-audit.png)
+![Toolkit homepage](assets/screenshots/homepage.png)
+![Sample report](assets/screenshots/sample-audit.png)
 ![Toolkit](assets/screenshots/toolkit.png)
 
 ## OPSEC gate
